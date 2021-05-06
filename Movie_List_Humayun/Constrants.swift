@@ -10,3 +10,4 @@ import UIKit
 var view_width: CGFloat = 0
 var view_height: CGFloat = 0
 var poste_base_url = "https://image.tmdb.org/t/p/w500"
+var movie_cell_identifier = "movie_cell_identifier"

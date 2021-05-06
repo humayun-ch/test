@@ -16,7 +16,9 @@ class ViewController: UIViewController {
     
     var descriptionArray = [String]()
     
-    var imageArray = [UIImage]()
+    var imageArray = [String]()
+    
+    var custom_view = MovieListView()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -26,8 +28,19 @@ class ViewController: UIViewController {
                print("data parsed successfully")
                 print(self.titleArray)
                 print(self.descriptionArray)
+                self.custom_view.data_collection_view.reloadData()
             }
         }
+        
+        view.addSubview(custom_view)
+        custom_view.anchor(top: view.topAnchor, left: view.leftAnchor, bottom: view.bottomAnchor, right: view.rightAnchor, paddingTop: 0, paddingLeft: 0, paddingBottom: 0, paddingRight: 0, width: 0, height: 0)
+        
+        custom_view.data_collection_view.delegate = self
+        custom_view.data_collection_view.dataSource = self
+        
+        custom_view.data_collection_view.register(dataCollectionViewCell.self, forCellWithReuseIdentifier: movie_cell_identifier)
+        
+
         
     }
     
@@ -49,6 +62,7 @@ class ViewController: UIViewController {
                     for i in 0..<movieInfo.results.count{
                         titleArray.append(movieInfo.results[i].title)
                         descriptionArray.append(movieInfo.results[i].overview)
+                        imageArray.append(movieInfo.results[i].posterPath ?? "default")
                     }
                     
                     
@@ -67,6 +81,35 @@ class ViewController: UIViewController {
         }
     }
 
+
+}
+
+extension ViewController: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout{
+
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return titleArray.count
+
+    }
+
+    
+
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: movie_cell_identifier, for: indexPath) as! dataCollectionViewCell
+        cell.backGround_imageView.image = UIImage(named: "\(poste_base_url)\(imageArray[indexPath.row])")
+        cell.movie_name.text = titleArray[indexPath.row]
+        cell.overall_view.text = descriptionArray[indexPath.row]
+        return cell
+
+    }
+
+    
+
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+
+        print(indexPath.row)
+
+    }
 
 }
 

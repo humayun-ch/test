@@ -20,7 +20,7 @@ class MovieListView: UIView {
 
     
 
-    let pdf_collection_view : UICollectionView = {
+    let data_collection_view : UICollectionView = {
 
         let layout = UICollectionViewFlowLayout()
 
@@ -81,9 +81,9 @@ class MovieListView: UIView {
         addSubview(title)
         title.anchor(top: self.topAnchor, left: self.leftAnchor, bottom: nil, right: nil, paddingTop: 50, paddingLeft: 20, paddingBottom: 0, paddingRight: 0, width: 200, height: 35)
 
-        addSubview(pdf_collection_view)
+        addSubview(data_collection_view)
 
-        pdf_collection_view.anchor(top: title.bottomAnchor,
+        data_collection_view.anchor(top: title.bottomAnchor,
 
                                    left: self.leftAnchor, bottom: self.bottomAnchor, right: self.rightAnchor,
 
@@ -95,7 +95,7 @@ class MovieListView: UIView {
 
                                   height: 0)
 
-        pdf_collection_view.centerXAnchor.constraint(equalTo: self.centerXAnchor).isActive = true
+        data_collection_view.centerXAnchor.constraint(equalTo: self.centerXAnchor).isActive = true
 
     }
 

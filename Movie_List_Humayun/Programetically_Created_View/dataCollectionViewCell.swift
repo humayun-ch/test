@@ -18,6 +18,8 @@ class dataCollectionViewCell: UICollectionViewCell {
           imageView.image = UIImage(named: "default")
 
           imageView.contentMode = .scaleAspectFill
+        
+          imageView.backgroundColor = .yellow
 
           imageView.layer.masksToBounds = true
 
@@ -31,6 +33,7 @@ class dataCollectionViewCell: UICollectionViewCell {
         label.text = "Movie List"
         label.font = UIFont(name: "Kefa", size: 17)
         label.textAlignment = .left
+        label.backgroundColor = .green
         return label
     }()
     
@@ -39,6 +42,7 @@ class dataCollectionViewCell: UICollectionViewCell {
         label.text = "Movie List"
         label.font = UIFont(name: "Kefa", size: 17)
         label.textAlignment = .left
+        label.backgroundColor = .green
         return label
     }()
     
@@ -64,6 +68,7 @@ class dataCollectionViewCell: UICollectionViewCell {
      //MARK: - Functions
 
      fileprivate func setUpSubviews(){
+        self.backgroundColor = .purple
         addSubview(backGround_imageView)
         backGround_imageView.anchor(top: self.topAnchor, left: self.leftAnchor, bottom: nil, right: nil, paddingTop: 0, paddingLeft: 5, paddingBottom: 0, paddingRight: 0, width: 50, height: 200)
         
