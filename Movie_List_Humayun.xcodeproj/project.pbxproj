@@ -8,6 +8,11 @@
 
 /* Begin PBXBuildFile section */
 		12142E1626444AA600F92832 /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12142E1526444AA600F92832 /* Model.swift */; };
+		12142E1C264456F900F92832 /* MovieListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12142E1B264456F900F92832 /* MovieListView.swift */; };
+		12142E21264457A100F92832 /* Constrants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12142E20264457A100F92832 /* Constrants.swift */; };
+		12142E262644580900F92832 /* Utility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12142E252644580900F92832 /* Utility.swift */; };
+		12142E2B2644595900F92832 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12142E2A2644595900F92832 /* Extensions.swift */; };
+		12142E3026445B1C00F92832 /* dataCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12142E2F26445B1C00F92832 /* dataCollectionViewCell.swift */; };
 		12A87B3C26443E65000D10C9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12A87B3B26443E65000D10C9 /* AppDelegate.swift */; };
 		12A87B3E26443E65000D10C9 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12A87B3D26443E65000D10C9 /* SceneDelegate.swift */; };
 		12A87B4026443E65000D10C9 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12A87B3F26443E65000D10C9 /* ViewController.swift */; };
@@ -41,6 +46,11 @@
 /* Begin PBXFileReference section */
 		0922C67BCA4C14AC7723EA32 /* Pods-Movie_List_Humayun-Movie_List_HumayunUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Movie_List_Humayun-Movie_List_HumayunUITests.debug.xcconfig"; path = "Target Support Files/Pods-Movie_List_Humayun-Movie_List_HumayunUITests/Pods-Movie_List_Humayun-Movie_List_HumayunUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		12142E1526444AA600F92832 /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
+		12142E1B264456F900F92832 /* MovieListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieListView.swift; sourceTree = "<group>"; };
+		12142E20264457A100F92832 /* Constrants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constrants.swift; sourceTree = "<group>"; };
+		12142E252644580900F92832 /* Utility.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utility.swift; sourceTree = "<group>"; };
+		12142E2A2644595900F92832 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		12142E2F26445B1C00F92832 /* dataCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = dataCollectionViewCell.swift; sourceTree = "<group>"; };
 		12A87B3826443E65000D10C9 /* Movie_List_Humayun.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Movie_List_Humayun.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		12A87B3B26443E65000D10C9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		12A87B3D26443E65000D10C9 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -93,6 +103,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		12142E1A264456C200F92832 /* Programetically_Created_View */ = {
+			isa = PBXGroup;
+			children = (
+				12142E1B264456F900F92832 /* MovieListView.swift */,
+				12142E2F26445B1C00F92832 /* dataCollectionViewCell.swift */,
+			);
+			path = Programetically_Created_View;
+			sourceTree = "<group>";
+		};
 		12A87B2F26443E65000D10C9 = {
 			isa = PBXGroup;
 			children = (
@@ -118,6 +137,7 @@
 		12A87B3A26443E65000D10C9 /* Movie_List_Humayun */ = {
 			isa = PBXGroup;
 			children = (
+				12142E1A264456C200F92832 /* Programetically_Created_View */,
 				12A87B3B26443E65000D10C9 /* AppDelegate.swift */,
 				12A87B3D26443E65000D10C9 /* SceneDelegate.swift */,
 				12A87B3F26443E65000D10C9 /* ViewController.swift */,
@@ -126,6 +146,9 @@
 				12A87B4626443E68000D10C9 /* LaunchScreen.storyboard */,
 				12A87B4926443E68000D10C9 /* Info.plist */,
 				12142E1526444AA600F92832 /* Model.swift */,
+				12142E20264457A100F92832 /* Constrants.swift */,
+				12142E252644580900F92832 /* Utility.swift */,
+				12142E2A2644595900F92832 /* Extensions.swift */,
 			);
 			path = Movie_List_Humayun;
 			sourceTree = "<group>";
@@ -409,10 +432,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				12142E262644580900F92832 /* Utility.swift in Sources */,
+				12142E21264457A100F92832 /* Constrants.swift in Sources */,
 				12A87B4026443E65000D10C9 /* ViewController.swift in Sources */,
+				12142E2B2644595900F92832 /* Extensions.swift in Sources */,
 				12A87B3C26443E65000D10C9 /* AppDelegate.swift in Sources */,
+				12142E1C264456F900F92832 /* MovieListView.swift in Sources */,
 				12A87B3E26443E65000D10C9 /* SceneDelegate.swift in Sources */,
 				12142E1626444AA600F92832 /* Model.swift in Sources */,
+				12142E3026445B1C00F92832 /* dataCollectionViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

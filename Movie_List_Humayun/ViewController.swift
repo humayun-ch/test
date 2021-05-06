@@ -11,6 +11,12 @@ import Alamofire
 class ViewController: UIViewController {
     
     var movie_data: Model? = nil
+    
+    var titleArray = [String]()
+    
+    var descriptionArray = [String]()
+    
+    var imageArray = [UIImage]()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -18,9 +24,8 @@ class ViewController: UIViewController {
         parsedData() { (success) in
             if success == 200{
                print("data parsed successfully")
-                
-                
-                
+                print(self.titleArray)
+                print(self.descriptionArray)
             }
         }
         
@@ -40,6 +45,12 @@ class ViewController: UIViewController {
                     let JSON = response.data
                     let movieInfo = try JSONDecoder().decode(Model.self, from: JSON!)
                     self.movie_data = movieInfo
+                    print(movieInfo.results.count)
+                    for i in 0..<movieInfo.results.count{
+                        titleArray.append(movieInfo.results[i].title)
+                        descriptionArray.append(movieInfo.results[i].overview)
+                    }
+                    
                     
                     success(200)
                 } catch {
