@@ -7,6 +7,7 @@
 
 import UIKit
 import Alamofire
+import Kingfisher
 
 class ViewController: UIViewController {
     
@@ -96,7 +97,13 @@ extension ViewController: UICollectionViewDelegate, UICollectionViewDataSource, 
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
 
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: movie_cell_identifier, for: indexPath) as! dataCollectionViewCell
-        cell.backGround_imageView.image = UIImage(named: "\(poste_base_url)\(imageArray[indexPath.row])")
+        if imageArray[indexPath.row] == "default"{
+            cell.backGround_imageView.image = UIImage(named: "default")
+        }else{
+            cell.backGround_imageView.kf.setImage(with: URL(string: poste_base_url + imageArray[indexPath.row]))
+        }
+
+        
         cell.movie_name.text = titleArray[indexPath.row]
         cell.overall_view.text = descriptionArray[indexPath.row]
         return cell
@@ -109,6 +116,10 @@ extension ViewController: UICollectionViewDelegate, UICollectionViewDataSource, 
 
         print(indexPath.row)
 
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        CGSize(width: view.frame.width, height: 350)
     }
 
 }

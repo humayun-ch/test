@@ -15,11 +15,9 @@ class dataCollectionViewCell: UICollectionViewCell {
 
           let imageView = UIImageView()
 
-          imageView.image = UIImage(named: "default")
+          imageView.image = UIImage(named: "holder")
 
-          imageView.contentMode = .scaleAspectFill
-        
-          imageView.backgroundColor = .yellow
+          imageView.contentMode = .scaleAspectFit
 
           imageView.layer.masksToBounds = true
 
@@ -31,18 +29,18 @@ class dataCollectionViewCell: UICollectionViewCell {
     let movie_name : UILabel = {
         let label = UILabel()
         label.text = "Movie List"
-        label.font = UIFont(name: "Kefa", size: 17)
+        label.font = UIFont(name: "Kefa", size: 15)
         label.textAlignment = .left
-        label.backgroundColor = .green
+        label.numberOfLines = 2
         return label
     }()
     
     let overall_view : UILabel = {
         let label = UILabel()
         label.text = "Movie List"
-        label.font = UIFont(name: "Kefa", size: 17)
+        label.font = UIFont(name: "Kefa", size: 10)
         label.textAlignment = .left
-        label.backgroundColor = .green
+        label.numberOfLines = 6
         return label
     }()
     
@@ -68,15 +66,14 @@ class dataCollectionViewCell: UICollectionViewCell {
      //MARK: - Functions
 
      fileprivate func setUpSubviews(){
-        self.backgroundColor = .purple
         addSubview(backGround_imageView)
-        backGround_imageView.anchor(top: self.topAnchor, left: self.leftAnchor, bottom: nil, right: nil, paddingTop: 0, paddingLeft: 5, paddingBottom: 0, paddingRight: 0, width: 50, height: 200)
+        backGround_imageView.anchor(top: self.topAnchor, left: self.leftAnchor, bottom: nil, right: nil, paddingTop: 0, paddingLeft: 5, paddingBottom: 0, paddingRight: 0, width: 100, height: 300)
         
         addSubview(movie_name)
         movie_name.anchor(top: backGround_imageView.topAnchor, left: backGround_imageView.rightAnchor, bottom: nil, right: self.rightAnchor, paddingTop: 0, paddingLeft: 10, paddingBottom: 0, paddingRight: 0, width: 0, height: 50)
         
         addSubview(overall_view)
-        overall_view.anchor(top: movie_name.bottomAnchor, left: movie_name.leftAnchor, bottom: nil, right: self.rightAnchor, paddingTop: 0, paddingLeft: 0, paddingBottom: 0, paddingRight: 0, width: 0, height: 150)
+        overall_view.anchor(top: movie_name.bottomAnchor, left: backGround_imageView.rightAnchor, bottom: nil, right: self.rightAnchor, paddingTop: 0, paddingLeft: 10, paddingBottom: 0, paddingRight: 0, width: 0, height: 250)
 
  }
 

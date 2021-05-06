@@ -9,6 +9,7 @@ target 'Movie_List_Humayun' do
 
   # Pods for Movie_List_Humayun
   pod 'Alamofire', '~> 5.2'
+  pod 'Kingfisher', '~> 4.0'
 
   target 'Movie_List_HumayunTests' do
     inherit! :search_paths
