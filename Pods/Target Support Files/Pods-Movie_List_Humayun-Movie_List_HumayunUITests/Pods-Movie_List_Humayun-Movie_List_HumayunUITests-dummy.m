@@ -1,0 +1,5 @@
+#import <Foundation/Foundation.h>
+@interface PodsDummy_Pods_Movie_List_Humayun_Movie_List_HumayunUITests : NSObject
+@end
+@implementation PodsDummy_Pods_Movie_List_Humayun_Movie_List_HumayunUITests
+@end
